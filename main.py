@@ -189,3 +189,7 @@ for episode in range(n_episodes):
             break
 
 print('Entrenamiento terminado.')
+
+# Guardar el modelo
+agent.model.save('salaryTest.h5')
+
