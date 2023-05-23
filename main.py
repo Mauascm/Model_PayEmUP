@@ -160,7 +160,7 @@ agent = DQNAgent(state_size=X_train.shape[1], action_size=2)
 
 
 # Número de episodios para el entrenamiento
-n_episodes = 2
+n_episodes = 500
 print(env.n_samples)
 # Bucle de entrenamiento
 for episode in range(n_episodes):
