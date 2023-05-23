@@ -15,6 +15,9 @@ import tensorflow as tf
 url = 'https://raw.githubusercontent.com/Mauascm/Model_PayEmUP/main/salary.csv'
 data = pd.read_csv(url)
 
+#### tomando solamente una muestra de los datos para tener una prueba rápida.
+data = data.sample(frac=0.05, random_state=42)
+
 # Ver las primeras filas de los datos
 print(data.head())
 
@@ -160,7 +163,7 @@ agent = DQNAgent(state_size=X_train.shape[1], action_size=2)
 
 
 # Número de episodios para el entrenamiento
-n_episodes = 500
+n_episodes = 100
 print(env.n_samples)
 # Bucle de entrenamiento
 for episode in range(n_episodes):
