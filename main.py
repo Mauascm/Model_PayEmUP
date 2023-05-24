@@ -16,7 +16,7 @@ url = 'https://raw.githubusercontent.com/Mauascm/Model_PayEmUP/main/salary.csv'
 data = pd.read_csv(url)
 
 #### tomando solamente una muestra de los datos para tener una prueba rápida.
-data = data.sample(frac=0.05, random_state=42)
+data = data.sample(frac=0.005, random_state=42)
 
 # Ver las primeras filas de los datos
 print(data.head())
@@ -163,7 +163,7 @@ agent = DQNAgent(state_size=X_train.shape[1], action_size=2)
 
 
 # Número de episodios para el entrenamiento
-n_episodes = 100
+n_episodes = 10
 print(env.n_samples)
 # Bucle de entrenamiento
 for episode in range(n_episodes):
@@ -190,6 +190,10 @@ for episode in range(n_episodes):
 
 print('Entrenamiento terminado.')
 
-# Guardar el modelo
-agent.model.save('salaryTest.h5')
-
+try:
+    # Guardar el modelo
+    agent.model.save('salaryTest', save_format='tf')
+    print("Modelo guardado correctamente.")
+except Exception as e:
+    print("Error al guardar el modelo.")
+    print(e)
