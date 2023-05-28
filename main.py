@@ -12,7 +12,7 @@ import tensorflow as tf
 
 ### analisis breve de los datos contenidos en la base de datos ### 
 
-url = 'https://raw.githubusercontent.com/Mauascm/Model_PayEmUP/main/salary.csv'
+url = 'https://raw.githubusercontent.com/Mauascm/Model_PayEmUP/main/salary2USA.csv'
 data = pd.read_csv(url)
 
 #### tomando solamente una muestra de los datos para tener una prueba rápida.
